@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
@@ -9,8 +9,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ela Admin - HTML5 Admin Template</title>
-    <meta name="description" content="Ela Admin - HTML5 Admin Template">
+    <title>Heatmap</title>
+    <meta name="description" content="Heatmap">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="images/favicon.png">
@@ -21,34 +21,10 @@
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/themify-icons.css">
     <link rel="stylesheet" href="assets/css/pe-icon-7-filled.css">
-
-
-    <link href="assets/weather/css/weather-icons.css" rel="stylesheet" />
-    <link href="assets/calendar/fullcalendar.css" rel="stylesheet" />
-
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="assets/css/charts/chartist.min.css" rel="stylesheet">
-    <link href="assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
-
-
-    <!--Maps Stuff -->
-    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
-    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
-    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
-    <!--Maps Stuff -->
-
-
-
 
     <style>
-        #weatherWidget .currentDesc {
-        color: #ffffff!important;
-    }
-        .traffic-chart { 
-            min-height: 335px; 
-        }
+
         #flotPie1  {
             height: 150px;
         } 
@@ -66,16 +42,13 @@
             padding-top: 10px;
             padding-bottom: 10px;
         }
-        #flotLine5  {
-             height: 105px;
-        } 
+        
 
-        #flotBarChart {
-            height: 150px;
-        }
-        #cellPaiChart{
-            height: 160px;
-        }
+     #map {
+        height: 100%;
+      }
+     
+  
 
     </style>
 
@@ -275,11 +248,11 @@
                 <div class="col-lg-8">
                     <div class="card">
 
+                        <div class="gmap_unix card-body" style="height:60vh; width:100vm;">
+                            <div id="map"></div>
 
-                        <div class="gmap_unix card-body">
-                            <div class="map" id="basic-map"></div>
+
                         </div>
-
 
 
                     </div><!-- /.card -->
@@ -290,12 +263,9 @@
                             <h4 class="card-title box-title">Kategorien</h4>
                             <div class="card-content">
 
-
-                                                    <div class="chart-container ov-h">
-                                                        <div id="flotPie1" class="float-chart"></div>
-                                                    </div>
-
-
+                                <div class="chart-container ov-h">
+                                    <div id="flotPie1" class="float-chart"></div>
+                                </div>
 
                             </div>
                         </div> <!-- /.card-body -->
@@ -430,7 +400,6 @@
 
     </div><!-- /#right-panel -->
 
-    <script src="assets/js/index.js"></script>
 
     <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
@@ -450,14 +419,22 @@
     <script src="assets/js/lib/flot-chart/jquery.flot.spline.js"></script>
 
 
-    <script src="assets/weather/js/jquery.simpleWeather.min.js"></script>
-    <script src="assets/weather/js/weather-init.js"></script>
+    <!-- Google Stuff -->
+    
 
 
-    <script src="assets/js/lib/moment/moment.js"></script>
-    <script src="assets/calendar/fullcalendar.min.js"></script>
-    <script src="assets/calendar/fullcalendar-init.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-database.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-messaging.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-functions.js"></script> -->
 
+    <script src="assets/js/index.js"></script>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuIU9EZkB51n_fxgyKNyqF36Wz49ZOXSo&callback=initMap">
+        async defer ></script>
 
 
     <script>
@@ -496,16 +473,9 @@
             // Pie chart flotPie1  End
 
         });  // End of Document Ready 
+
+
     </script>
-
-
-  <!-- Gmaps -->
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false"></script> -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2jlT6C_to6X1mMvR9yRWeRvpIgTXgddM"></script>
-    <script src="assets/js/lib/gmap/gmaps.js"></script>
-    <script src="assets/js/lib/gmap/gmap.init.js"></script>
-
-
 </body>
 
 </html>
