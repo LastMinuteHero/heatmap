@@ -40,10 +40,7 @@ app.listen(3000)
 var Twitter = require('twitter');
 
 var client = new Twitter({
-    consumer_key: 'TxvRueOcLImIGVfJxzOhZ2Fkz',
-    consumer_secret: '83aJJCLBjsqJUP9Lm38lMyVtIMXJvLAgBdqQmZ8MPyMeUUwgMD',
-    access_token_key: '3297378398-0KjoFhlOmDCZ65Qp9XeJY1SXS4WLIMevEFnXNuO',
-    access_token_secret: '62LvJZDLk7u7ONiNE0hxU8BNccDVdMRoDfwp4MKs9xciK'
+
 });
 
 
