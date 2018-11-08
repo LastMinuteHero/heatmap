@@ -7,7 +7,7 @@ Firebase Realtime Database
 Twitter API, Presseportal API
  (so far planned)
 
-# Connecting to Firebase & Twitter
+### Connecting to Firebase & Twitter
 Connecting to Firebase (from firebase-console):
 * go to Settings (next to "project overview")
 * go to "service accounts"
